@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Landing Page</title>
+    <style>
+        * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    background-color: white;
+    color: black;
+    font-family: "Fira Sans", sans-serif;
+    background-color: white;
+}
+  
+nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 5%;
+    background-color: #8cc099;
+}
+  
+nav .heading {
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+  
+nav ul {
+    display: flex;
+    list-style: none;
+}
+  
+nav ul li {
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: 0.2s ease-in;
+}
+  
+nav ul li a {
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: none;
+    color: white;
+}
+  
+nav ul li:hover {
+    background-color: green;
+}
+  
+nav ul li a:hover {
+    color: white;
+}
+  
+nav .sideMenuButton {
+    font-size: 30px;
+    font-weight: bolder;
+    cursor: pointer;
+    display: none;
+}
+  
+@media screen and (max-width: 600px) {
+    nav .sideMenuButton {
+        display: flex;
+    }
+  
+    nav .navbar {
+        display: none;
+    }
+  
+    .sideNavigationBar {
+        display: block !important;
+    }
+}
+  
+.sideNavigationBar {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0%;
+    background-color: green;
+    overflow-x: hidden;
+    transition: 0.3s ease-in;
+    padding-top: 60px;
+    display: none;
+}
+  
+.sideNavigationBar a {
+    padding: 8px 8px 8px 40px;
+    display: block;
+    font-size: 25px;
+    font-weight: 500;
+    color: #d1d1d1;
+    transition: 0.3s;
+    text-decoration: none;
+}
+  
+.sideNavigationBar a button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: green;
+    font-size: 16px;
+    border-style: none;
+    font-weight: 700;
+}
+  
+.sideNavigationBar a:hover {
+    color: white;
+}
+  
+.sideNavigationBar .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 20px;
+    margin-left: 50px;
+}
+  
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2% 5%;
+}
+  
+.line .side1 {
+    padding-right: 50px;
+}
+  
+.side1 h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: green;
+}
+  
+.side1 button {
+    width: 200px;
+    padding: 12px 20px;
+    border-radius: 20px;
+    border-style: none;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+}
+  
+a {
+    text-decoration: none;
+    color: black;
+}
+  
+@media screen and (max-width: 980px) {
+    .side2 img {
+        width: 350px;
+    }
+  
+    .side1 h1 {
+        font-size: 40px;
+    }
+  
+    .side1 p {
+        font-size: 17px;
+    }
+  
+    .line {
+        margin-top: 80px;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .side1 h1 {
+        font-size: 35px;
+    }
+  
+    .line {
+        flex-direction: column;
+    }
+  
+    .line .side1 {
+        padding: 30px;
+    }
+}
+  
+  
+section .topic a {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+  
+.about .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+  
+.about .boxes .box {
+    margin: 10px 20px;
+    max-width: calc(100% / 3 - 50px);
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+    cursor: default;
+}
+  
+  
+.contact {
+    padding: 20px;
+}
+  
+.contact .content {
+    margin: 0 auto;
+    padding: 30px 0;
+}
+  
+.content .title {
+    width: 80%;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 40px;
+}
+  
+.title {
+    margin-bottom: 30px;
+    margin-left: 80px;
+}
+  
+.contactMenu {
+    display: flex;
+    justify-content: space-evenly;
+}
+  
+.input2 {
+    margin-top: 10;
+}
+  
+.label1 {
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-weight: bolder;
+}
+  
+.contactMenu .input1 input {
+    border-radius: 13px;
+    padding: 6px;
+}
+  
+.input2 input {
+    border-color: rgb(252, 244, 244);
+    width: 400px;
+}
+  
+.button {
+    margin-top: 12px;
+    margin-left: 5px;
+}
+  
+.button button {
+    width: 162px;
+    height: 35px;
+    border-radius: 12px;
+    border-color: transparent;
+}
+  
+.button button:hover {
+    background-color: #8cc099;
+}
+  
+button {
+    width: 162px;
+    height: 35px;
+    border-radius: 12px;
+    border-color: transparent;
+}
+  
+button:hover {
+    background-color: #8cc099;
+}
+  
+.rightside1 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 700px;
+}
+  
+.title1 {
+    font-size: 18px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+  
+.content1 {
+    width: 450px;
+    margin-top: 2px;
+    color: grey;
+}
+  
+footer {
+    background: var(--primary-color);
+    padding: 15px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+  
+footer .footer span {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--white-color);
+}
+  
+footer .footer span a {
+    font-weight: 500;
+    color: var(--white-color);
+}
+  
+footer .footer span a:hover {
+    text-decoration: underline;
+}
+  
+@media screen and (max-width: 1060px) {
+    .contactMenu {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .rightside1 {
+        display: flex;
+        flex-direction: column;
+        margin-left: 0px;
+    }
+  
+    .content1 {
+        width: 100%;
+        margin-top: 2px;
+        color: grey;
+    }
+  
+    .side2 img {
+        width: 95%;
+        height: 90%;
+    }
+}
+  
+@media screen and (max-width: 600px) {
+    .side2 img {
+        width: 100%;
+    }
+  
+    section .topic a {
+        font-size: 20px;
+    }
+  
+    section .topic p {
+        font-size: 5px;
+    }
+  
+    .about .boxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .about .boxes .box {
+        max-width: 70%;
+    }
+}
+    </style>
+    <script>
+        function openNavbar() {
+	document.getElementById("sideNavigationBar")
+		.style.width = "50%";
+}
+function closeNavbar() {
+	document.getElementById("sideNavigationBar")
+		.style.width = "0%";
+}
+
+    </script>
+</head>
+  
+<body>
+    <nav style="margin-top: 30px;">
+        <center><div class="heading">Landing Page</div></center>
+        
+        <div class="navbar">
+            <ul>
+                <li><a href="landing page.html">Home</a></li>
+                <li><a href="ABOUT.HTML">About</a></li>
+                <li><a href="SIGNUP.HTML">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+  
+    <center> <div class="side2">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVEFCzBEwOR9K6X2VGQa95es3wnRd-iyeoUg&usqp=CAU" width="500" style="border: 4px solid black;border-radius: 10px;">
+        </div></center>
+    </div>
+  
+    <section class="about" id="My Projects">
+        <div class="content">
+            <div class="title">
+                <span>Courses</span>
+            </div>
+            <div class="boxes">
+                <div class="box">
+                    <div class="topic">
+                        <a href="SQL.HTML" target="_blank">
+                            SQL
+                        </a>
+                    </div>
+                    <p>
+                        SQL stands for Structured Query Language. 
+                        SQL lets you access and manipulate databases. 
+                        SQL became a standard of the American National Standards 
+                        Institute (ANSI) in 1986, and of the International Organization
+                         for Standardization (ISO) in 1987.
+                    </p>
+                </div>
+                <div class="box">
+  
+                    <div class="topic">
+                        <a href="HTML.HTML" target="_blank">
+                            HTML
+                        </a>
+                    </div>
+                    <p>
+                        HTML stands for HyperText 
+                        Markup Language. It is used 
+                        to design web pages using 
+                        the markup language.
+                    </p>
+                </div>
+  
+                <div class="box">
+                    <div class="topic">
+                        <a href="JS.HTML" target="_blank">
+                            Javascript
+                        </a>
+                    </div>
+                    <p>
+                        JavaScript (JS) is the most 
+                        popular lightweight, interpreted 
+                        compiled programming language.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+  <BR>
+    
+                <div class="input3" style="margin-left: 40PX;">
+                        <div class="title1">
+                            <span>
+                                Contact Us
+                            </span>
+                        </div>
+                        <div class="content1">
+                            <UL>
+                                <LI ><a href="https://www.linkedin.com/in/shreya-srivastava-0319a7235/?originalSubdomain=in" style="text-decoration: none;">LINKEDIN</a></LI>
+                                <BR>
+                                <LI><a href="https://www.instagram.com/_shreya.s_05_/" style="text-decoration: none;">INSTAGRAM</a></LI>
+                                <BR>
+                                <LI><a href="mailto:shreyasrivastava730@gmail.com" style="text-decoration: none;">EMAIL</a>   </LI>
+                                <BR>
+                                <LI><a href="tel:+918960770454" style="text-decoration: none;">PHONE NUMBER</a></LI>
+                    
+                            </UL>
+                        </div>
+                        <BR>
+                            <BR>
+                        <div class="rightside1">
+                            <B><span>More Information</span></B>
+                        </div>
+                        
+                        <div class="rightside1">
+                            Greetings to all!<BR>
+                            We welcome you to the platform where we
+                            consistently strive to offer the best 
+                            of education. This platform has been 
+                            designed for everyone wishing to 
+                            expand their knowledge, share their 
+                            knowledge and is ready to grab their 
+                            dream job. We have millions of articles,
+                            live as well as online courses, thousands 
+                            of tutorials and much more just for you.Thank you for choosing 
+                            and supporting us!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <BR>
+        <BR>
+
+    <footer>
+        <div class="footer">
+            <span>
+                Created By:SHREYA SRIVASTAVA
+                
+            </span>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+  
+</html>
